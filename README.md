@@ -6,9 +6,7 @@
 
 Create a file in your repo called `_config.yaml` with the following contents:
 
-Create a file in your repo called `_config.yaml` with the following contents:
 
-Create a file in your repo called `_config.yaml` with the following contents:
 
 ```
 remote_theme: nathanclevenger/docs
