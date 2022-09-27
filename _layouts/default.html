@@ -19,10 +19,49 @@
   <!--   <link href="https://unpkg.com/prismjs@v1.x/themes/prism.css" rel="stylesheet" /> -->
   <script type="text/javascript" src="https://unpkg.com/mermaid@9.1.7/dist/mermaid.min.js">
   </script>
+  <style>
+    h1 {
+      color: #060611;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 50px;
+    }
+
+    h2 {
+      color: #060611;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    h6 {
+      color: #231323;
+      font-family: 'IBM Plex Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 26px;
+      line-height: 32px;
+    }
+
+    p {
+      color: #231323;
+      font-family: 'IBM Plex Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  </style>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
 </head>
 
@@ -55,12 +94,13 @@
   <!-- Content -->
   <div class="">
     <div class="prose mx-auto max-w-sm px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-4xl pt-8">
-      
+
       {{ content }}
 
       <!--       <iframe src="https://ghbtns.com/github-btn.html?user={{ site.github.owner_name }}&amp;repo={{ site.github.repository_name }}&amp;type=star&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="160" height="30" title="GitHub"></iframe> -->
       <div class="text-right py-6 text-sm">
-        <a href="{{ site.github.repository_url }}/blob/{{ site.github.source.branch }}/{{ page.name }}">Edit on GitHub <span aria-hidden="true"> &rarr;</span></a>
+        <a href="{{ site.github.repository_url }}/blob/{{ site.github.source.branch }}/{{ page.name }}">Edit on GitHub
+          <span aria-hidden="true"> &rarr;</span></a>
       </div>
     </div>
   </div>
@@ -108,7 +148,8 @@
 
       <div class="mt-8 md:mt-0 md:order-1">
         <a class="text-gray-400" href="{{ site.github.owner_url }}">
-          <p class="text-center text-sm sm:text-xs text-gray-400">Copyright &copy; {{ 'now' | date: "%Y" }} {{ site.owner |
+          <p class="text-center text-sm sm:text-xs text-gray-400">Copyright &copy; {{ 'now' | date: "%Y" }} {{
+            site.owner |
             default: 'Nathan Clevenger' }}
         </a>
         <!--          <a href="{{ site.github.repository_url }}/blob/{{ site.github.source.branch }}/LICENSE"><img src="https://img.shields.io/badge/License-{{ site.github.license.spdx_id }}-blue.svg" /></a>. -->
