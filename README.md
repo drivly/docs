@@ -12,3 +12,4 @@ title: Docs - Clean & Simple Theme for your Docs on GitHub Pages
 description: 
 icon: 🚀
 ```
+
