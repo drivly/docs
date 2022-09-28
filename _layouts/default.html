@@ -15,7 +15,7 @@
         },
       };
     </script>
-    <!-- <link rel="stylesheet" href="../prism.css" /> -->
+    <link rel="stylesheet" href="../prism.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.5.0/prism-dracula.min.css"
@@ -35,6 +35,40 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <style>
+      h1 {
+        color: #060611;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 40px;
+      }
+      h5 {
+        color: #231323;
+        font-family: "IBM Plex Sans";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 24px;
+      }
+      h2 {
+        color: #060611;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 32px;
+      }
+      p {
+        color: #231323;
+        font-family: "IBM Plex Sans";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 18px;
+      }
+    </style>
   </head>
 
   <body class="h-full">
@@ -58,7 +92,7 @@
       <!-- Content -->
       <div class="min-h-[90vh]">
         <div
-          class="language-yaml mx-auto min-w-sm px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-4xl pt-8"
+          class="prose language-yaml mx-auto min-w-sm px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-4xl pt-8"
         >
           {{ content }}
           <iframe
