@@ -36,7 +36,7 @@
       rel="stylesheet"
     />
     <style>
-      h1 {
+            h1 {
         color: #060611;
         font-family: "Montserrat";
         font-style: normal;
@@ -94,7 +94,26 @@
         <div
           class="prose language-yaml mx-auto min-w-sm px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-4xl pt-8"
         >
-          {{ content }}
+          <h1>Docs</h1>
+
+          <h5>Minimalistic Jekyll theme for docs built with TailwindCSS</h5>
+
+          <h2>Getting Started</h2>
+
+          <p>
+            Create a file in your repo called `_config.yaml` with the following
+            contents:
+          </p>
+
+          <pre>
+            <code>
+              yaml
+              remote_theme: drivly/docs
+              title: Docs - Clean & Simple Theme for your Docs on GitHub Pages
+              description: 
+              icon: 🚀
+            </code>
+          </pre>
           <iframe
             src="https://ghbtns.com/github-btn.html?user={{ site.github.owner_name }}&amp;repo={{ site.github.repository_name }}&amp;type=star&amp;count=true&amp;size=large"
             frameborder="0"
