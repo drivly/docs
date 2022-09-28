@@ -15,7 +15,7 @@
         },
       };
     </script>
-    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css"> -->
+    <link rel="stylesheet" href="../prismtomorrownight.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.5.0/prism-dracula.min.css"
@@ -91,9 +91,15 @@
       <!-- Content -->
       <div class="min-h-[90vh]">
         <div
-          class="prose mx-auto min-w-sm px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-4xl pt-8 language-markdown"
+          class="prose mx-auto min-w-sm px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-4xl pt-8 language-yaml"
         >
-          {{ content }}
+          <pre><code>
+            remote_theme: drivly/docs
+            title: Docs - Clean & Simple Theme for your Docs on GitHub Pages
+            description: 
+            icon: 🚀
+            login: /login
+            callback: /api</code></pre>
           <iframe
             src="https://ghbtns.com/github-btn.html?user={{ site.github.owner_name }}&amp;repo={{ site.github.repository_name }}&amp;type=star&amp;count=true&amp;size=large"
             frameborder="0"
