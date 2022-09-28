@@ -15,7 +15,9 @@
       }
     }
   </script>
-  <link rel="stylesheet" href="../prism.css" />
+  <!-- <link rel="stylesheet" href="../prism.css" /> -->
+  <link rel="stylesheet" href="https://unpkg.com/dracula-prism/dist/css/dracula-prism.min.css">
+
   <!--   <link href="https://unpkg.com/prismjs@v1.x/themes/prism.css" rel="stylesheet" /> -->
   <script type="text/javascript" src="https://unpkg.com/mermaid@9.1.7/dist/mermaid.min.js">
   </script>
@@ -61,7 +63,7 @@
     rel="stylesheet">
 </head>
 
-<body class="h-full">
+<body class="h-full language-css">
   <!-- Header -->
   <div class="relative bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -76,7 +78,7 @@
     </div>
 
     <!-- Content -->
-    <div class="h-screen">
+    <div class="min-h-[90vh]">
       <div class="prose mx-auto max-w-sm px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-4xl pt-8">
           {{ content }}
         <iframe
@@ -193,7 +195,7 @@
       </div>
     </footer>
     <script src="../prism.js"></script>
-    <script src="https://unpkg.com/prismjs@v1.x/plugins/autoloader/prism-autoloader.min.js"></script>
+    <!-- <script src="https://unpkg.com/prismjs@v1.x/plugins/autoloader/prism-autoloader.min.js"></script> -->
   </body>
   <script>
     var config = {
