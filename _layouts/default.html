@@ -15,7 +15,14 @@
         },
       };
     </script>
-    <link rel="stylesheet" href="../prism.css" />
+    <!-- <link rel="stylesheet" href="../prism.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.5.0/prism-dracula.min.css"
+      integrity="sha512-naBrNzTEplW1xpCmrireVtPafiVBwOwFTVhvxH5zspfRL9QeZsaPuPxJZKnSFrFCcFF6XkoT6AiYsN+9dUuo2Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- <link rel="stylesheet" href="https://unpkg.com/dracula-prism/dist/css/dracula-prism.min.css"> -->
     <script
       type="text/javascript"
@@ -30,7 +37,7 @@
     />
   </head>
 
-  <body class="h-full language-yaml">
+  <body class="h-full">
     <!-- Header -->
     <div class="relative bg-white">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -53,7 +60,15 @@
         <div
           class="language-yaml mx-auto min-w-sm px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-4xl pt-8"
         >
-          {{content}}
+          <pre>
+            <code>
+              yaml
+              remote_theme: drivly/docs
+              title: Docs - Clean & Simple Theme for your Docs on GitHub Pages
+              description: 
+              icon: 🚀
+            </code>
+          </pre>
           <iframe
             src="https://ghbtns.com/github-btn.html?user={{ site.github.owner_name }}&amp;repo={{ site.github.repository_name }}&amp;type=star&amp;count=true&amp;size=large"
             frameborder="0"
@@ -168,7 +183,7 @@
       </div>
     </footer>
     <script src="../prism.js"></script>
-    <script src="https://unpkg.com/prismjs@v1.x/plugins/autoloader/prism-autoloader.min.js"></script>
+    <!-- <script src="https://unpkg.com/prismjs@v1.x/plugins/autoloader/prism-autoloader.min.js"></script> -->
     <script>
       var config = {
         startOnLoad: true,
