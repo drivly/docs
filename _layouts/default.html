@@ -15,7 +15,7 @@
         },
       };
     </script>
-    <link rel="stylesheet" href="../prism.css" />
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css"> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.5.0/prism-dracula.min.css"
@@ -23,7 +23,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- <link rel="stylesheet" href="https://unpkg.com/dracula-prism/dist/css/dracula-prism.min.css"> -->
     <script
       type="text/javascript"
       src="https://unpkg.com/mermaid@9.1.7/dist/mermaid.min.js"
@@ -36,7 +35,7 @@
       rel="stylesheet"
     />
     <style>
-            h1 {
+      h1 {
         color: #060611;
         font-family: "Montserrat";
         font-style: normal;
@@ -92,28 +91,9 @@
       <!-- Content -->
       <div class="min-h-[90vh]">
         <div
-          class="prose language-yaml mx-auto min-w-sm px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-4xl pt-8"
+          class="prose mx-auto min-w-sm px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-4xl pt-8 language-markdown"
         >
-          <h1>Docs</h1>
-
-          <h5>Minimalistic Jekyll theme for docs built with TailwindCSS</h5>
-
-          <h2>Getting Started</h2>
-
-          <p>
-            Create a file in your repo called `_config.yaml` with the following
-            contents:
-          </p>
-
-          <pre>
-            <code>
-              yaml
-              remote_theme: drivly/docs
-              title: Docs - Clean & Simple Theme for your Docs on GitHub Pages
-              description: 
-              icon: 🚀
-            </code>
-          </pre>
+          {{content }}
           <iframe
             src="https://ghbtns.com/github-btn.html?user={{ site.github.owner_name }}&amp;repo={{ site.github.repository_name }}&amp;type=star&amp;count=true&amp;size=large"
             frameborder="0"
@@ -228,7 +208,7 @@
       </div>
     </footer>
     <script src="../prism.js"></script>
-    <!-- <script src="https://unpkg.com/prismjs@v1.x/plugins/autoloader/prism-autoloader.min.js"></script> -->
+    <script src="https://unpkg.com/prismjs@v1.x/plugins/autoloader/prism-autoloader.min.js"></script>
     <script>
       var config = {
         startOnLoad: true,
@@ -244,5 +224,10 @@
         document.querySelectorAll(".language-mermaid")
       );
     </script>
+    <script
+      src="//instant.page/5.1.1"
+      type="module"
+      integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"
+    ></script>
   </body>
 </html>
