@@ -1,5 +1,3 @@
-/* PrismJS 1.29.0
-https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+markdown+markup-templating&plugins=line-numbers+autolinker+normalize-whitespace+toolbar+copy-to-clipboard */
 var _self =
     "undefined" != typeof window
       ? window
