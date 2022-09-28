@@ -1,8 +1,8 @@
 # Docs
 
-##### Minimalistic Jekyll theme for docs built with TailwindCSS
+## Minimalistic Jekyll theme for docs built with TailwindCSS
 
-## Getting Started
+### Getting Started
 
 Create a file in your repo called `_config.yaml` with the following contents:
 

@@ -11,6 +11,10 @@
             colors: {
               theme: "#da373d",
             },
+            fontFamily: {
+              IBM: ["IBM Plex Sans", "sans-serif"],
+              Montserrat: ["Montserrat", "sans-serif"],
+            },
           },
         },
       };
@@ -38,7 +42,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <style>
+    <!-- <style>
       h1 {
         color: #060611;
         font-family: "Montserrat";
@@ -47,7 +51,7 @@
         font-size: 40px;
         line-height: 40px;
       }
-      h5 {
+      h2 {
         color: #231323;
         font-family: "IBM Plex Sans";
         font-style: normal;
@@ -55,7 +59,7 @@
         font-size: 32px;
         line-height: 24px;
       }
-      h2 {
+      h3 {
         color: #060611;
         font-family: "Montserrat";
         font-style: normal;
@@ -69,19 +73,19 @@
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
-        line-height: 18px;
+        line-height: 1.7rem;
       }
-    </style>
+    </style> -->
   </head>
 
   <body class="h-full" data-instant-allow-external-links>
     <!-- Header -->
     <div class="relative bg-white">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <nav class="max-w-6xl mx-auto px-4 sm:px-6">
         <div
           class="flex justify-between items-center border-b border-gray-200 py-5 md:justify-start md:space-x-10"
         >
-          <div class="flex justify-start items-center lg:w-0 lg:flex-1">
+          <div class="flex justify-start items-center flex-1">
             <a href="#">
               <span class="sr-only">Docs</span>
               <p class="w-auto text-4xl sm:text-3xl text-bold">
@@ -111,14 +115,15 @@
             Get Started
           </a>
         </div>
-      </div>
+      </nav>
 
       <!-- Content -->
-      <div class="min-h-[90vh]">
-        <div
+      <main class="min-h-[90vh]">
+        <section
           class="prose mx-auto min-w-sm px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-4xl pt-8"
         >
           {{ content }}
+
           <iframe
             src="https://ghbtns.com/github-btn.html?user={{ site.github.owner_name }}&amp;repo={{ site.github.repository_name }}&amp;type=star&amp;count=true&amp;size=large"
             frameborder="0"
@@ -127,14 +132,16 @@
             height="30"
             title="GitHub"
           ></iframe>
-          <div class="text-right py-6 text-sm">
+          <div class="text-right py-6 text-[20px]">
             <a
+              class="text-[#231323] font-semibold font-IBM"
               href="{{ site.github.repository_url }}/blob/{{ site.github.source.branch }}/{{ page.name }}"
-              >Edit on GitHub <span aria-hidden="true"> &rarr;</span></a
+              >Edit this page on GitHub
+              <span aria-hidden="true"> &rarr;</span></a
             >
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
     </div>
     <!-- Footer -->
     <footer class="max-w-6xl w-full mx-auto px-4 pt-10">
