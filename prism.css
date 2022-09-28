@@ -1,5 +1,6 @@
 /* PrismJS 1.29.0
 https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+markdown+markup-templating&plugins=autolinker+toolbar+copy-to-clipboard */
+
 h1 {
   color: #060611;
   font-family: "Montserrat";
@@ -8,7 +9,7 @@ h1 {
   font-size: 40px;
   line-height: 40px;
 }
-h2 {
+h5 {
   color: #231323;
   font-family: "IBM Plex Sans";
   font-style: normal;
