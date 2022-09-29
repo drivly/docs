@@ -15,6 +15,67 @@
               IBM: ["IBM Plex Sans", "sans-serif"],
               Montserrat: ["Montserrat", "sans-serif"],
             },
+            typography: {
+              DEFAULT: {
+                css: {
+                  color: "#060611",
+                  h1: {
+                    color: "#060611",
+                    fontFamily: "Montserrat",
+                    fontStyle: "normal",
+                    fontWeight: 700,
+                    fontSize: ["40px"],
+                    lineHeight: ["40px"],
+                  },
+                  h2: {
+                    color: "#231323",
+                    fontFamily: "Montserrat",
+                    fontWeight: 700,
+                    fontStyle: "normal",
+                    fontSize: ["32px"],
+                    lineHeight: ["39px"],
+                  },
+                  h3: {
+                    color: "#060611",
+                    fontFamily: "Montserrat",
+                    fontWeight: 500,
+                    fontStyle: "normal",
+                    fontSize: ["24px"],
+                    lineHeight: ["32px"],
+                  },
+                  h5: {
+                    color: "#231323",
+                    fontFamily: "IBM Plex Sans",
+                    fontWeight: 400,
+                    fontSize: ["24px"],
+                    lineHeight: ["32px"],
+                  },
+                  p: {
+                    color: "#4D4E58",
+                    fontFamily: "IBM Plex Sans",
+                    fontWeight: 400,
+                    fontSize: ["18px"],
+                    lineHeight: "24px",
+                  },
+                  pre: {
+                    maxHeight: ["550px"],
+                  },
+                  code: {
+                    maxHeight: ["550px"],
+                  },
+                  ul: {
+                    listStyle: "none",
+                  },
+                  li: {
+                    display: "flex",
+                    alignItems: "center",
+                    marginLeft: "-31px",
+                    fontSize: "14px",
+                    color: "#4D4E58",
+                  },
+                },
+              },
+            },
           },
         },
       };
@@ -66,7 +127,7 @@
         font-size: 32px;
         line-height: 24px;
       }
-      h3 {
+      h5 {
         color: #060611;
         font-family: "Montserrat";
         font-style: normal;
@@ -75,12 +136,36 @@
         line-height: 32px;
       }
       p {
-        color: #231323;
+        color: #4d4e58;
         font-family: "IBM Plex Sans";
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
         line-height: 1.7rem;
+      }
+      ul {
+        list-style-type: none;
+        white-space: nowrap;
+        padding-left: -10px;
+        padding: 0;
+        /* Setup the counter. */
+        counter-reset: list;
+      }
+      li:before {
+        list-style: none;
+        /* Advance the number. */
+        counter-increment: list;
+        /* Use the counter number as content. */
+        content: counter(list);
+        color: #4d4e58;
+        background-color: rgb(243 244 246);
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 24px;
+        margin-right: 8px;
       }
     </style>
   </head>
