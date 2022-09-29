@@ -19,10 +19,13 @@
         },
       };
     </script>
-    <link rel="stylesheet" href="../prism.css" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.29.0/plugins/autolinker/prism-autolinker.min.css,npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.css"
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autolinker/prism-autolinker.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.css"
     />
 
     <link
@@ -43,6 +46,10 @@
       rel="stylesheet"
     />
     <style>
+      code[class*="language-"],
+      pre[class*="language-"] {
+        max-height: 550px;
+      }
       h1 {
         color: #060611;
         font-family: "Montserrat";
@@ -78,7 +85,7 @@
     </style>
   </head>
 
-  <body class="h-full language-json" data-instant-allow-external-links>
+  <body class="h-full" data-instant-allow-external-links>
     <!-- Header -->
     <div class="relative bg-white">
       <nav class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -123,6 +130,7 @@
           class="prose mx-auto min-w-sm px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-4xl pt-8"
         >
           {{ content }}
+
           <iframe
             src="https://ghbtns.com/github-btn.html?user={{ site.github.owner_name }}&amp;repo={{ site.github.repository_name }}&amp;type=star&amp;count=true&amp;size=large"
             frameborder="0"
@@ -238,8 +246,17 @@
         </div>
       </div>
     </footer>
-    <script src="../prism.js"></script>
-    <script src="https://unpkg.com/prismjs@v1.x/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autolinker/prism-autolinker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+
+    <script>
+      Prism.plugins.autoloader.languages_path =
+        "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/";
+    </script>
     <script>
       var config = {
         startOnLoad: true,
