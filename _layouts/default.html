@@ -10,6 +10,8 @@
           extend: {
             colors: {
               theme: "#da373d",
+              drivly: "#060611",
+              drivlyGreen: "#00CAB9",
             },
             fontFamily: {
               IBM: ["IBM Plex Sans", "sans-serif"],
@@ -22,8 +24,7 @@
                   h1: {
                     color: "#060611",
                     fontFamily: "Montserrat",
-                    fontStyle: "normal",
-                    fontWeight: 700,
+                    fontWeight: "bold !important",
                     fontSize: ["40px"],
                     lineHeight: ["40px"],
                   },
@@ -66,15 +67,25 @@
                   ul: {
                     listStyle: "none",
                   },
+                  ol: {
+                    listStyle: "none",
+                  },
                   li: {
                     display: "flex",
                     alignItems: "center",
-                    marginLeft: "-31px",
-                    fontSize: "14px",
                     color: "#4D4E58",
+                    fontFamily: "IBM Plex Sans",
+                    fontWeight: 400,
+                    fontSize: ["18px"],
+                    lineHeight: "24px",
+                    margin: "0px 0px 16px -31px",
+                    padding: 0,
                   },
                   a: {
                     overflowWrap: "anywhere",
+                    textDecoration: "none",
+                    marginTop: 0,
+                    padding: 0,
                   },
                 },
               },
@@ -113,14 +124,15 @@
       code[class*="language-"],
       pre[class*="language-"] {
         max-height: 550px;
+        margin-bottom: 22.5px;
       }
       h1 {
         color: #060611;
         font-family: "Montserrat";
-        font-style: normal;
-        font-weight: 700;
+        font-weight: 700 !important;
         font-size: 40px;
         line-height: 40px;
+        text-transform: capitalize;
       }
       h2 {
         color: #231323;
@@ -146,7 +158,8 @@
         font-size: 18px;
         line-height: 1.7rem;
       }
-      ul {
+      ul,
+      ol {
         list-style-type: none;
         white-space: nowrap;
         padding-left: -10px;
@@ -169,6 +182,16 @@
         width: 20px;
         height: 24px;
         margin-right: 8px;
+      }
+      li {
+        padding-left: -6px;
+      }
+      a {
+        margin: 0 !important;
+        padding: 0;
+      }
+      a:hover {
+        text-decoration: underline;
       }
     </style>
   </head>
@@ -217,17 +240,68 @@
         <section
           class="prose mx-auto min-w-sm px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-4xl pt-8"
         >
-          {{ content }}
+          <h1><a href="">apikeys.do</a></h1>
+          <p>
+            Because the ID of a Durable Object is itself a hash, we don’t have
+            worry about managing hashes seperately.
+          </p>
 
-          <iframe
-            src="https://ghbtns.com/github-btn.html?user={{ site.github.owner_name }}&amp;repo={{ site.github.repository_name }}&amp;type=star&amp;count=true&amp;size=large"
-            frameborder="0"
-            scrolling="0"
-            width="160"
-            height="30"
-            title="GitHub"
-          ></iframe>
-          <div class="text-right py-6 text-[20px]">
+          <pre>
+            <code class="language-js">
+              export class ApiKeys {
+                constructor(state, env) {
+                  this.state = state
+                  state.blockConcurrencyWhile(async () => {
+                    this.profile = await state.storage.get('profile')
+                    this.stats = await state.storage.list({ prefix: 'stats' })
+                  })
+                }
+              
+                async fetch(req) {
+                  const url = req.url
+                  const { origin, method, hostname, pathname, search, hash } = new URL(url)
+                  const id = req.headers.get('cf-ray') + '-' + req.cf.colo
+                  const ts = Date.now()
+              
+                  // Update Stats
+                  this.data[id] = { id, ts, origin, method, hostname, pathname, search, hash }
+              
+                  // Record request
+                  this.state.storage.put('req:' + id, { id, ts, origin, method, hostname, pathname, search, hash }, { allowUnconfirmed: true })
+              
+                  return new Response(
+                    JSON.stringify(
+                      {
+                        profile: this.profile,
+                        stats: this.stats,
+                      },
+                      null,
+                      2
+                    ),
+                    { headers: { 'content-type': 'application/json' } }
+                  )
+                }
+              }
+            </code>
+          </pre>
+          <h3>New List</h3>
+          <ul>
+            <li><a href="api"> APIs all day</a></li>
+            <li><a href="api"> APIs all day</a></li>
+            <li><a href="api"> APIs all day</a></li>
+            <li><a href="api"> APIs all day</a></li>
+            <li><a href="api"> APIs all day</a></li>
+          </ul>
+          <div class="flex justify-between items-center py-6 text-[20px]">
+            <iframe
+              src="https://ghbtns.com/github-btn.html?user={{ site.github.owner_name }}&amp;repo={{ site.github.repository_name }}&amp;type=star&amp;count=true&amp;size=large"
+              frameborder="0"
+              scrolling="0"
+              width="160"
+              height="30"
+              title="GitHub"
+            ></iframe>
+
             <a
               class="text-[#231323] font-semibold font-IBM"
               href="{{ site.github.repository_url }}/blob/{{ site.github.source.branch }}/{{ page.name }}"
