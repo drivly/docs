@@ -14,6 +14,5 @@ title: Docs - Clean & Simple Theme for your Docs on GitHub Pages
 description: 
 icon: 🚀
 gettingStarted: /login?redirect_uri=https://example.do/api
-
 ```
 
