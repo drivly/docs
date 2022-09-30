@@ -409,12 +409,19 @@
     -->
 
     <script>
-      var elements = document.querySelectorAll(
-        ".language-json, .language-javascript, .language-yaml"
-      );
+      // var elements = document.querySelectorAll(".language-json, .language-javascript, .language-yaml")
+      // // var elements = document.querySelectorAll(
+      // //   ".highlighter-rouge:not(.language-mermaid) pre.highlight"
+      // // );
+      // console.log("elements", elements)
+
+      // for (var element of elements) {
+      //   Prism.highlightElement(element, false);
+      // }
+      var elements = document.querySelectorAll('.highlighter-rouge:not(.language-mermaid) pre.highlight');
 
       for (var element of elements) {
-        Prism.highlightElement(element, false);
+          Prism.highlightElement(element, false);
       }
       Prism.plugins.autoloader.languages_path =
         "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/";
