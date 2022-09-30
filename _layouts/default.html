@@ -268,41 +268,7 @@
         <section
           class="prose mx-auto min-w-sm px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-4xl pt-8"
         >
-          <pre>
-          <code class="language-mermaid">
-            sequenceDiagram
-            participant C as ctx-do
-            participant D as database.do
-            participant O as database.do<br/>(oauth-do)
-            participant A as oauth.do
-            D->>O: /login
-            opt databases.do logged out
-              O->>A: /login?state=
-              opt oauth.do logged out
-                A-)github.com: /login/oauth/authorize?
-                github.com-->>A: /callback
-              end
-              A->>O: /login/callback
-              Note over A,O: generate JWT token
-            end
-            O->>D: /api
-            Note over O,D: set JWT cookie
-            D->>C: verify and decrypt JWT
-            C--)D: return user object
-          </code>
-        </pre>
-          <ul>
-            <h3>Unordered List</h3>
-            <li>First</li>
-            <li>Second</li>
-            <li>Third</li>
-          </ul>
-          <ol>
-            <h3>Ordered List</h3>
-            <li>First</li>
-            <li>Second</li>
-            <li>Third</li>
-          </ol>
+         {{ content }}
 
           <div class="flex justify-between items-center py-6 text-[20px]">
             <iframe
