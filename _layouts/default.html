@@ -59,27 +59,16 @@
                     lineHeight: "24px",
                   },
                   pre: {
-                    maxHeight: ["550px"],
+                    maxHeight: ["600px"],
                   },
-                  code: {
-                    maxHeight: ["550px"],
-                  },
-                  ul: {
-                    listStyle: "none",
-                  },
+                  // code: {
+                  //   maxHeight: ["550px"],
+                  // },
                   ol: {
                     listStyle: "none",
                   },
-                  li: {
-                    display: "flex",
-                    alignItems: "center",
-                    color: "#4D4E58",
-                    fontFamily: "IBM Plex Sans",
-                    fontWeight: 400,
-                    fontSize: ["18px"],
-                    lineHeight: "24px",
-                    margin: "0px 0px 16px -31px",
-                    padding: 0,
+                  ul: {
+                    listStyle: "none",
                   },
                   a: {
                     overflowWrap: "anywhere",
@@ -94,7 +83,7 @@
         },
       };
     </script>
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autolinker/prism-autolinker.min.css"
     />
@@ -108,7 +97,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.5.0/prism-dracula.min.css"
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    />
+    /> -->
     <script
       type="text/javascript"
       src="https://unpkg.com/mermaid@9.1.7/dist/mermaid.min.js"
@@ -121,11 +110,16 @@
       rel="stylesheet"
     />
     <style>
-      code[class*="language-"],
+      pre,
+      code {
+        max-height: 600px;
+        margin-bottom: 22.5px;
+      }
+      /* code[class*="language-"],
       pre[class*="language-"] {
         max-height: 550px;
         margin-bottom: 22.5px;
-      }
+      } */
       h1 {
         color: #060611;
         font-family: "Montserrat";
@@ -158,7 +152,30 @@
         font-size: 18px;
         line-height: 1.7rem;
       }
-      ul,
+      ul {
+        white-space: nowrap;
+        padding-left: -10px;
+        padding: 0;
+        list-style: none;
+        position: relative;
+        /* Setup the counter. */
+      }
+      ul > li::before {
+        content: "";
+        /* Use the counter number as content. */
+        background-color: #060611;
+        border-radius: 4px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 6px;
+        height: 6px;
+        padding: 2px;
+        position: absolute;
+        left: 0;
+        margin-left: 8px;
+        margin-top: 10px;
+      }
       ol {
         list-style-type: none;
         white-space: nowrap;
@@ -167,7 +184,7 @@
         /* Setup the counter. */
         counter-reset: list;
       }
-      li:before {
+      ol > li:before {
         list-style: none;
         /* Advance the number. */
         counter-increment: list;
@@ -183,8 +200,19 @@
         height: 24px;
         margin-right: 8px;
       }
-      li {
+      ol > li {
         padding-left: -6px;
+        display: flex;
+        align-items: center;
+        margin: 0px 0px 16px -31px;
+        padding: 0;
+      }
+      li {
+        color: #4d4e58;
+        font-family: IBM Plex Sans;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
       }
       a {
         margin: 0 !important;
@@ -240,7 +268,42 @@
         <section
           class="prose mx-auto min-w-sm px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-4xl pt-8"
         >
-          {{ content }}
+          <pre>
+          <code class="language-mermaid">
+            sequenceDiagram
+            participant C as ctx-do
+            participant D as database.do
+            participant O as database.do<br/>(oauth-do)
+            participant A as oauth.do
+            D->>O: /login
+            opt databases.do logged out
+              O->>A: /login?state=
+              opt oauth.do logged out
+                A-)github.com: /login/oauth/authorize?
+                github.com-->>A: /callback
+              end
+              A->>O: /login/callback
+              Note over A,O: generate JWT token
+            end
+            O->>D: /api
+            Note over O,D: set JWT cookie
+            D->>C: verify and decrypt JWT
+            C--)D: return user object
+          </code>
+        </pre>
+          <ul>
+            <h3>Unordered List</h3>
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+          </ul>
+          <ol>
+            <h3>Ordered List</h3>
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+          </ol>
+
           <div class="flex justify-between items-center py-6 text-[20px]">
             <iframe
               src="https://ghbtns.com/github-btn.html?user={{ site.github.owner_name }}&amp;repo={{ site.github.repository_name }}&amp;type=star&amp;count=true&amp;size=large"
@@ -357,17 +420,17 @@
         </div>
       </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autolinker/prism-autolinker.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script> -->
 
-    <script>
+    <!-- <script>
       Prism.plugins.autoloader.languages_path =
         "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/";
-    </script>
+    </script> -->
     <script>
       var config = {
         startOnLoad: true,
