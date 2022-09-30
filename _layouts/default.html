@@ -85,7 +85,7 @@
         },
       };
     </script>
-    <!-- <link
+    <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autolinker/prism-autolinker.min.css"
     />
@@ -99,7 +99,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.5.0/prism-dracula.min.css"
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    /> -->
+    />
     <script
       type="text/javascript"
       src="https://unpkg.com/mermaid@9.1.7/dist/mermaid.min.js"
@@ -396,17 +396,29 @@
         </div>
       </div>
     </footer>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"
+      data-manual
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+    -->
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autolinker/prism-autolinker.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    -->
 
-    <!-- <script>
+    <script>
+      var elements = document.querySelectorAll(
+        ".language-json, .language-javascript, .language-yaml"
+      );
+
+      for (var element of elements) {
+        Prism.highlightElement(element, false);
+      }
       Prism.plugins.autoloader.languages_path =
         "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/";
-    </script> -->
+    </script>
     <script
       src="//instant.page/5.1.1"
       type="module"
