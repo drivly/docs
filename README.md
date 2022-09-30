@@ -13,7 +13,7 @@ remote_theme: drivly/docs
 title: Docs - Clean & Simple Theme for your Docs on GitHub Pages
 description: 
 icon: 🚀
-login: /login
-callback: /api
+gettingStarted: /login?redirect_uri=https://example.do/api
+
 ```
 
