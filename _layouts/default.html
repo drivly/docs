@@ -72,6 +72,9 @@
                   ul: {
                     listStyle: "none",
                   },
+                  li: {
+                    overflowWrap: "anywhere",
+                  },
                   a: {
                     overflowWrap: "anywhere",
                     textDecoration: "none",
@@ -112,17 +115,23 @@
       rel="stylesheet"
     />
     <style>
+      html {
+        overflow-wrap: break-word;
+      }
       pre,
       code {
         max-height: 600px;
         padding-bottom: 22.5px;
       }
-      /* code[class*="language-"],
-      pre[class*="language-"] {
-        max-height: 550px;
-        margin-bottom: 22.5px;
-      } */
       h1 {
+        color: #060611;
+        font-family: "Montserrat";
+        font-weight: 700 !important;
+        font-size: 40px;
+        line-height: 40px;
+        text-transform: capitalize;
+      }
+      h1 > a {
         color: #060611;
         font-family: "Montserrat";
         font-weight: 700 !important;
@@ -138,12 +147,20 @@
         font-size: 32px;
         line-height: 24px;
       }
-      h5 {
-        color: #060611;
-        font-family: "Montserrat";
+      h2 > a {
+        color: #231323;
+        font-family: "IBM Plex Sans";
         font-style: normal;
-        font-weight: 700;
+        font-weight: 400 !important;
         font-size: 32px;
+        line-height: 24px;
+      }
+      h3 > a {
+        color: #060611;
+        font-family: Montserrat;
+        font-weight: 500 !important;
+        font-style: normal;
+        font-size: 24px;
         line-height: 32px;
       }
       p {
@@ -155,7 +172,6 @@
         line-height: 1.7rem;
       }
       ul {
-        white-space: nowrap;
         padding-left: -10px;
         padding: 0;
         list-style: none;
@@ -180,13 +196,12 @@
       }
       ol {
         list-style-type: none;
-        white-space: nowrap;
         padding-left: -10px;
         padding: 0;
         /* Setup the counter. */
         counter-reset: list;
       }
-      ol > li:before {
+      ol > li::before {
         list-style: none;
         /* Advance the number. */
         counter-increment: list;
@@ -418,10 +433,12 @@
       // for (var element of elements) {
       //   Prism.highlightElement(element, false);
       // }
-      var elements = document.querySelectorAll('.highlighter-rouge:not(.language-mermaid) pre.highlight');
+      var elements = document.querySelectorAll(
+        ".highlighter-rouge:not(.language-mermaid) pre.highlight"
+      );
 
       for (var element of elements) {
-          Prism.highlightElement(element, false);
+        Prism.highlightElement(element, false);
       }
       Prism.plugins.autoloader.languages_path =
         "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/";
